@@ -3,8 +3,11 @@
 - create-react-app
 - configured tailwind css
 - Header
+- Routing of app
 - Login Form
 - Sign up form
+- Form validation
+- useRef Hook
 
 # Features
 
@@ -23,5 +26,11 @@
         - Moives lists \* N
 
 - Netflix GPT
+
   - Search bar
   - Movie suggestions
+
+- Firebase
+- Firebase Login
+- Firebase init
+- Firebase Deploy
