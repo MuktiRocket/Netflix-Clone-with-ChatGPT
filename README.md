@@ -1,19 +1,22 @@
 # Netflix-ChatGPT
 
--create-react-app
--configured tailwind css
+- create-react-app
+- configured tailwind css
+- Header
+- Login Form
+- Sign up form
 
 # Features
 
-- login/signup page
+- Login/signup page
 
-  - signup/signin form
-  - redirect to browse page
+  - Signup/Signin form
+  - Redirect to browse page
 
 - Browse Page(after authentication)
 
-  - header
-  - main movie
+  - Header
+  - Main movie
     - Trailer in background
       - Title in background
       - Movie suggestions
@@ -21,4 +24,4 @@
 
 - Netflix GPT
   - Search bar
-  - movie suggestions
+  - Movie suggestions
