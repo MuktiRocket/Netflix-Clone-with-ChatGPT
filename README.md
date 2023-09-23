@@ -11,6 +11,11 @@
 - Firebase Setup
 - Deployment to production
 - Create signup user account
+- Implement Sign user api
+- create redux store with userSlice
+- Implemented signout
+- Update profie api call
+- Fetch movies from TMDB
 
 # Features
 
