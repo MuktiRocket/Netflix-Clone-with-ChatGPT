@@ -33,6 +33,14 @@
 - GPT search Page
 - GPT search bar
 - Multi-language features in GPT search page
+- Get open ai api key
+- GPT search api call
+- Fetch GPT movies suggestions from TMDB
+- Created GPT slice added data
+- Reused Movies movies components to make Suggestions Container
+- Memoization
+- Added .env and to .gitIgnore
+- Made Whole Site responsive
 
 # Features
 

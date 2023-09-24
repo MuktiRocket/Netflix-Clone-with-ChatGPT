@@ -55,13 +55,13 @@ const Header = () => {
     dispatch(changeLanguage(e.target.value));
   };
   return (
-    <div className="absolute w-screen px-8 py-6 bg-gradient-to-b from-black z-10 flex justify-between">
-      <img className="w-44" src={logo} alt="logo" />
+    <div className="fixed w-screen md:px-8 px-6 py-6 bg-gradient-to-b from-black z-50 flex flex-col md:flex-row justify-center md:justify-between">
+      <img className="mx-auto md:w-44 w-36 md:mx-0" src={logo} alt="logo" />
       {user && (
-        <div className="flex p-2 m-2">
+        <div className="flex md:p-2 md:m-2 m-2 justify-between">
           {showGptSearch && (
             <select
-              className="p-2 m-2 bg-transparent hover:bg-gray-950 text-white"
+              className="md:p-2 md:m-2 bg-transparent hover:bg-gray-950 text-white rounded-sm md:rounded-lg"
               onChange={handleLanguageChange}
             >
               {SUPPORTED_LANGUAGES.map((language) => (
@@ -76,18 +76,21 @@ const Header = () => {
             </select>
           )}
           <button
-            className="px-2 my-2 m-10 bg-opacity-50 hover:bg-gray-950 text-white rounded-lg"
+            className="md:px-2 md:my-2 my-1 m-10 bg-opacity-50 hover:bg-gray-950 text-white rounded-lg"
             onClick={handleGptSearchClick}
           >
             {showGptSearch ? "Homepage" : "GPT Search"}
           </button>
           <img
-            className="w-12 h-12"
+            className="md:w-12 md:h-12 w-8 h-8 pr-1"
             alt="usericon"
             // src="https://occ-0-4995-2186.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABYRFxAWVrKCK9D6k09JulRmTVhxugke34M7wLusyTHt0RvbvCG9vm-LB4vThezTJ8ugZYSEozv070OBw7Tfi9ICj_luecvA.png?r=d3e"
             src={user?.photoURL}
           />
-          <button className="font-bold text-white px-4" onClick={handleSignOut}>
+          <button
+            className="font-bold text-white md:px-4 px-1 pl-1"
+            onClick={handleSignOut}
+          >
             Sign Out
           </button>
         </div>
