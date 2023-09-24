@@ -30,6 +30,9 @@
 - Updated store with trailer video
 - Embded Youtube video
 - Tailwind classes to make to look proper (main container)
+- GPT search Page
+- GPT search bar
+- Multi-language features in GPT search page
 
 # Features
 
