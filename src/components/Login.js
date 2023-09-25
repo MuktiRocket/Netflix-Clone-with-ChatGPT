@@ -15,6 +15,8 @@ const Login = () => {
   const dispatch = useDispatch();
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
+  const [loader, setLoader] = useState(false);
+
   const name = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
@@ -23,10 +25,14 @@ const Login = () => {
     setIsSignInForm(!isSignInForm);
   };
   const handleButtonClick = () => {
+    setLoader(true);
     //validate the form data
     const message = checkValidData(email.current.value, password.current.value);
     setErrorMessage(message);
-    if (message) return;
+    if (message) {
+      setLoader(false);
+      return;
+    }
 
     //sign in / sign up
     if (!isSignInForm) {
@@ -65,6 +71,7 @@ const Login = () => {
           const errorMessage = error.message;
           setErrorMessage(errorCode + "-" + errorMessage);
         });
+      setLoader(false);
     } else {
       //sign in
       signInWithEmailAndPassword(
@@ -81,6 +88,7 @@ const Login = () => {
           const errorMessage = error.message;
           setErrorMessage(errorCode + "-" + errorMessage);
         });
+      setLoader(!loader);
     }
     //2:52
   };
@@ -127,7 +135,22 @@ const Login = () => {
           className="p-4 my-6 bg-red-700 w-full font-bold rounded-lg"
           onClick={handleButtonClick}
         >
-          {isSignInForm ? "Sign In" : "Sign Up"}
+          {!loader ? (
+            isSignInForm ? (
+              "Sign In"
+            ) : (
+              "Sign Up"
+            )
+          ) : (
+            <div
+              className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+              role="status"
+            >
+              <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
+                Loading...
+              </span>
+            </div>
+          )}
         </button>
         <p className="py-4 cursor-pointer" onClick={toggleSignInForm}>
           {isSignInForm
