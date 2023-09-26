@@ -41,6 +41,8 @@
 - Memoization
 - Added .env and to .gitIgnore
 - Made Whole Site responsive
+- Added loader in sign in page
+- Added Shimmer ui for home page
 
 # Features
 
